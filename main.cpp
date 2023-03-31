@@ -2,8 +2,16 @@
 
 using namespace std;
 
+class penghitungan{
+public:
+    int keluarpertalite(int nominal);
+    return nominal/10000;
+};
+
 int main()
 {
-    cout << "Hello world!" << endl;
+    int jenis, liter, repeat, harga;
+        penghitungan itung;
+
     return 0;
 }

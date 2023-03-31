@@ -17,7 +17,7 @@ public:
     return uang/13300;
     }
     double pertamakTurbo(double uang){
-    return uang/14500;
+    return uang/15100;
     }
     double solar(double uang){
     return uang/6800;
@@ -26,6 +26,9 @@ public:
 
 void cetak(string katakata){
     cout<<"Mau beli " << katakata << " seharga berapa? :\n";
+    }
+void gagal(string katakata){
+    cout<<"Pembelian " << katakata << " tidak bisa dibawah 0!\n"
     }
 
 int main()
@@ -42,27 +45,39 @@ int main()
             case 1:
                 cetak("pertalet");
                 cin>>nominal;
+                if nominal < 0{
+                gagal("pertalet");
+                } else {
                 liter = hitung.pertalet(nominal);
                 cout<<"Anda membeli pertalet sebanyak "<< liter <<" liter \n";
-                break;
+                } break;
             case 2:
                 cetak("pertamak");
                 cin>>nominal;
+                if nominal < 0{
+                gagal("pertamak");
+                } else {
                 liter = hitung.pertamak(nominal);
                 cout<<"Anda membeli pertamak sebanyak "<< liter <<" liter \n";
-                break;
+                } break;
             case 3:
                 cetak("pertamakTurbo");
                 cin>>nominal;
+                if nominal < 0{
+                gagal("pertamak turbo");
+                } else {
                 liter = hitung.pertamakTurbo(nominal);
                 cout<<"Anda membeli pertamak turbo sebanyak "<< liter <<" liter \n";
-                break;
+                } break;
             case 4:
                 cetak("solar");
                 cin>>nominal;
+                if nominal < 0{
+                gagal("solar");
+                } else {
                 liter = hitung.solar(nominal);
                 cout<<"Anda membeli solar sebanyak "<< liter <<" liter \n";
-                break;
+                } break;
             default:
                 cout<<"Masukkan jenis dengan benar!";
                 break;

@@ -2,12 +2,7 @@
 
 using namespace std;
 
-/*
- method buat ngitung keluaran literannya misal nominal/10000 buat pertalite, nominal/12500 pertamax.
- perulangan buat reset mesing, keseluruhan diulang
-
-
-*/
+//METHODS
 class penghitungan{
 public:
     double pertalet(double uang){
@@ -24,19 +19,23 @@ public:
     }
 };
 
+//FUNCTIONS
 void cetak(string katakata){
     cout<<"Mau beli " << katakata << " seharga berapa? :\n";
     }
 void gagal(string katakata){
-    cout<<"Pembelian " << katakata << " tidak bisa dibawah 0!\n"
+    cout<<"Pembelian " << katakata << " tidak bisa dibawah 0!\n";
+    }
+void kwitansi(string bbm, double banyak, int uang){
+    cout<<"Berhasil mengisi " <<bbm <<" sebanyak " << banyak << " liter dengan harga "<< uang <<"!\n\n";
     }
 
+//MAIN CLASS
 int main()
-
     {
     penghitungan hitung;
-    int jenis, repeat;
-
+    int jenis, repeat, ulang;
+    cout<<"Pom Bengsin Perminyakan \n\n";
     do{
         double liter, harga, nominal;
         cout<<"Silahkan pilih jenis BBM Anda! \n 1. pertalet \n 2. pertamak \n 3. pertamak turbo \n 4. solar \n";
@@ -45,43 +44,61 @@ int main()
             case 1:
                 cetak("pertalet");
                 cin>>nominal;
-                if nominal < 0{
+                if (nominal < 0){
                 gagal("pertalet");
                 } else {
                 liter = hitung.pertalet(nominal);
-                cout<<"Anda membeli pertalet sebanyak "<< liter <<" liter \n";
+                kwitansi("pertalet", liter, nominal);
+
                 } break;
             case 2:
                 cetak("pertamak");
                 cin>>nominal;
-                if nominal < 0{
+                if (nominal < 0){
                 gagal("pertamak");
                 } else {
                 liter = hitung.pertamak(nominal);
-                cout<<"Anda membeli pertamak sebanyak "<< liter <<" liter \n";
+                kwitansi("pertamak", liter, nominal);
                 } break;
             case 3:
                 cetak("pertamakTurbo");
                 cin>>nominal;
-                if nominal < 0{
+                if (nominal < 0){
                 gagal("pertamak turbo");
                 } else {
                 liter = hitung.pertamakTurbo(nominal);
-                cout<<"Anda membeli pertamak turbo sebanyak "<< liter <<" liter \n";
+                kwitansi("pertamak turbo", liter, nominal);
                 } break;
             case 4:
                 cetak("solar");
                 cin>>nominal;
-                if nominal < 0{
+                if (nominal < 0){
                 gagal("solar");
                 } else {
                 liter = hitung.solar(nominal);
-                cout<<"Anda membeli solar sebanyak "<< liter <<" liter \n";
+                kwitansi("solar", liter, nominal);
                 } break;
             default:
-                cout<<"Masukkan jenis dengan benar!";
+                cout<<"Masukkan jenis dengan benar! \n\n";
                 break;
             }
+
+        do {
+             cout<<"Lanjut Isi? \n 1. Reset Mesin \n 2. Matikan Mesin \n";
+             cin>>ulang;
+            switch(ulang){
+            case 1:
+                ulang = 1;
+                break;
+            case 2:
+                ulang = 1;
+                repeat = 1;
+                break;
+            default :
+                cout<<"Pilihan tidak valid!\n";
+                }
+        } while (ulang == 0);
     } while (repeat == 0);
+    cout<<"Shutting Down!";
     return 0;
 }

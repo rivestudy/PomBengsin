@@ -38,7 +38,7 @@ int main()
     cout<<"Pom Bengsin Perminyakan \n\n";
     do{
         double liter, harga, nominal;
-        cout<<"Silahkan pilih jenis BBM Anda! \n 1. pertalite \n 2. pertamax \n 3. pertamax turbo \n 4. solar \n";
+        cout<<"|     Silahkan pilih jenis BBM Anda!     |\n|     1. pertalite                       | \n|     2. pertamax                        |\n|     3. pertamax turbo                  |\n|     4. solar                           |\n";
         cin>>jenis;
         switch(jenis){
             case 1:

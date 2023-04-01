@@ -29,6 +29,12 @@ void gagal(string katakata){
 void kwitansi(string bbm, double banyak, int uang){
     cout<<"Berhasil mengisi " <<bbm <<" sebanyak " << banyak << " liter \nTotal dibayar = Rp."<< uang <<"!\n\n";
     }
+void overp(string katakata){
+    cout<<" Pembelian " <<katakata << " Maksimal Rp.500.000!\n\n ";
+    }
+void overs(string katakata){
+    cout<<" Pembelian " <<katakata << " Maksimal Rp.1.000.000!\n\n ";
+    }
 
 //MAIN CLASS
 int main()
@@ -46,6 +52,8 @@ int main()
                 cin>>nominal;
                 if (nominal < 0){
                 gagal("pertalite");
+                } else if (nominal > 500000){
+                overp("pertalite") ;
                 } else {
                 liter = hitung.pertalite(nominal);
                 kwitansi("pertalite", liter, nominal);
@@ -76,6 +84,8 @@ int main()
                 cin>>nominal;
                 if (nominal < 0){
                 gagal("solar");
+                } else if (nominal > 1000000){
+                overs("solar") ;
                 } else {
                 liter = hitung.solar(nominal);
                 kwitansi("solar", liter, nominal);

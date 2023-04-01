@@ -5,13 +5,13 @@ using namespace std;
 //METHODS
 class penghitungan{
 public:
-    double pertalet(double uang){
+    double pertalite(double uang){
     return uang/10000;
     }
-    double pertamak(double uang){
+    double pertamax(double uang){
     return uang/13300;
     }
-    double pertamakTurbo(double uang){
+    double pertamaxTurbo(double uang){
     return uang/15100;
     }
     double solar(double uang){
@@ -38,37 +38,37 @@ int main()
     cout<<"Pom Bengsin Perminyakan \n\n";
     do{
         double liter, harga, nominal;
-        cout<<"Silahkan pilih jenis BBM Anda! \n 1. pertalet \n 2. pertamak \n 3. pertamak turbo \n 4. solar \n";
+        cout<<"Silahkan pilih jenis BBM Anda! \n 1. pertalite \n 2. pertamax \n 3. pertamax turbo \n 4. solar \n";
         cin>>jenis;
         switch(jenis){
             case 1:
-                cetak("pertalet");
+                cetak("pertalite");
                 cin>>nominal;
                 if (nominal < 0){
-                gagal("pertalet");
+                gagal("pertalite");
                 } else {
-                liter = hitung.pertalet(nominal);
-                kwitansi("pertalet", liter, nominal);
+                liter = hitung.pertalite(nominal);
+                kwitansi("pertalite", liter, nominal);
                 } break;
 
             case 2:
-                cetak("pertamak");
+                cetak("pertamax");
                 cin>>nominal;
                 if (nominal < 0){
-                gagal("pertamak");
+                gagal("pertamax");
                 } else {
-                liter = hitung.pertamak(nominal);
-                kwitansi("pertamak", liter, nominal);
+                liter = hitung.pertamax(nominal);
+                kwitansi("pertamax", liter, nominal);
                 } break;
 
             case 3:
-                cetak("pertamak turbo");
+                cetak("pertamax turbo");
                 cin>>nominal;
                 if (nominal < 0){
-                gagal("pertamak turbo");
+                gagal("pertamax turbo");
                 } else {
-                liter = hitung.pertamakTurbo(nominal);
-                kwitansi("pertamak turbo", liter, nominal);
+                liter = hitung.pertamaxTurbo(nominal);
+                kwitansi("pertamax turbo", liter, nominal);
                 } break;
 
             case 4:

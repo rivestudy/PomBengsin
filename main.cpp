@@ -27,7 +27,7 @@ void gagal(string katakata){
     cout<<"Pembelian " << katakata << " tidak bisa dibawah 0!\n";
     }
 void kwitansi(string bbm, double banyak, int uang){
-    cout<<"Berhasil mengisi " <<bbm <<" sebanyak " << banyak << " liter dengan harga "<< uang <<"!\n\n";
+    cout<<"Berhasil mengisi " <<bbm <<" sebanyak " << banyak << " liter \nTotal dibayar = Rp."<< uang <<"!\n\n";
     }
 
 //MAIN CLASS
@@ -49,8 +49,8 @@ int main()
                 } else {
                 liter = hitung.pertalet(nominal);
                 kwitansi("pertalet", liter, nominal);
-
                 } break;
+
             case 2:
                 cetak("pertamak");
                 cin>>nominal;
@@ -60,8 +60,9 @@ int main()
                 liter = hitung.pertamak(nominal);
                 kwitansi("pertamak", liter, nominal);
                 } break;
+
             case 3:
-                cetak("pertamakTurbo");
+                cetak("pertamak turbo");
                 cin>>nominal;
                 if (nominal < 0){
                 gagal("pertamak turbo");
@@ -69,6 +70,7 @@ int main()
                 liter = hitung.pertamakTurbo(nominal);
                 kwitansi("pertamak turbo", liter, nominal);
                 } break;
+
             case 4:
                 cetak("solar");
                 cin>>nominal;
@@ -78,14 +80,15 @@ int main()
                 liter = hitung.solar(nominal);
                 kwitansi("solar", liter, nominal);
                 } break;
+
             default:
                 cout<<"Masukkan jenis dengan benar! \n\n";
                 break;
             }
 
         do {
-             cout<<"Lanjut Isi? \n 1. Reset Mesin \n 2. Matikan Mesin \n";
-             cin>>ulang;
+            cout<<"Lanjut Isi? \n 1. Reset Mesin \n 2. Matikan Mesin \n";
+            cin>>ulang;
             switch(ulang){
             case 1:
                 ulang = 1;
@@ -95,7 +98,7 @@ int main()
                 repeat = 1;
                 break;
             default :
-                cout<<"Pilihan tidak valid!\n";
+                cout<<"Pilihan tidak valid!\n\n";
                 }
         } while (ulang == 0);
     } while (repeat == 0);

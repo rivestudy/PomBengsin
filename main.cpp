@@ -87,7 +87,7 @@ int main()
             }
 
         do {
-            cout<<"Lanjut Isi? \n 1. Reset Mesin \n 2. Matikan Mesin \n";
+            cout<<"Lanjut Isi? \n 1. Reset Mesin (lanjut mengisi) \n 2. Matikan Mesin \n";
             cin>>ulang;
             switch(ulang){
             case 1:
